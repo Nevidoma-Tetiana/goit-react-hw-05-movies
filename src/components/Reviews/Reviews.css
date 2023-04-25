@@ -1,0 +1,6 @@
+.rewievsList > li:nth-child(even) {
+  background-color: rgba(241, 188, 198, 0.463);
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

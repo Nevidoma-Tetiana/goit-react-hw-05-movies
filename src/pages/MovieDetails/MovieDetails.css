@@ -1,0 +1,29 @@
+.homeBtn {
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  background-color: rgba(234, 166, 249, 0.459);
+  border: 1px solid rgb(234, 166, 249);
+  margin-bottom: 20px;
+}
+
+.homeBtn:focus {
+  border: 1px solid #bbb;
+}
+
+.containerMain {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  border-bottom: 2px dashed #bbb;
+}
+
+.details {
+  padding: 20px;
+}

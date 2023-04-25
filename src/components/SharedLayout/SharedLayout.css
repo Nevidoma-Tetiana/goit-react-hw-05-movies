@@ -1,0 +1,37 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed black;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+.navLink {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: 300ms ease;
+  background-color: rgba(93, 200, 212, 0.608);
+}
+
+.navLink:hover {
+  background-color: rgb(93, 200, 212);
+}
+
+.navLink:active {
+  color: white;
+  background-color: rgb(55, 112, 118);
+}

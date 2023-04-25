@@ -1,0 +1,20 @@
+.movieList {
+  list-style: none;
+}
+
+.movieItem {
+  width: 60%;
+}
+
+.movieItem > a {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(241, 188, 198);
+  border-radius: 4px;
+  cursor: pointer;
+  color: #000;
+}
+
+.movieItem > a:hover {
+  background-color: rgb(219, 157, 255);
+}

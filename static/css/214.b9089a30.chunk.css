@@ -1,0 +1,2 @@
+.movieList{list-style:none}.movieItem{width:60%}.movieItem>a{background-color:#f1bcc6;border-radius:4px;color:#000;cursor:pointer;margin:5px;padding:10px}.movieItem>a:hover{background-color:#db9dff}.searchForm{display:flex;gap:10px;justify-content:center;padding:10px}.searchBtn,.searchInput{background-color:rgba(241,188,198,.51);border:1px solid #f1bcc6;border-radius:4px;outline:none;padding:10px}.searchBtn:focus,.searchInput:focus{border:1px solid #bbb}
+/*# sourceMappingURL=214.b9089a30.chunk.css.map*/

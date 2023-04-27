@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieCredits } from '../../Api/Api';
+import { getPoster } from '../../Api/getPoster';
 import './Cast.css';
 
 export default function Cast() {
@@ -29,7 +30,7 @@ export default function Cast() {
                 <img
                   className="actorImg"
                   width="100"
-                  src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+                  src={getPoster(profile_path)}
                   alt={name}
                 />
                 <p>Character: </p>

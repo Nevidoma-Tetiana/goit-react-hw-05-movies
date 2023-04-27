@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { getMovieDetails } from '../../Api/Api';
 import { Suspense } from 'react';
 import '../../components/SharedLayout/SharedLayout.css';
-// import { StyledLink } from 'components/SharedLayout/SharedLayoutStyled';
+import { getPoster } from '../../Api/getPoster';
 import './MovieDetails.css';
 
 export default function MovieDetails() {
@@ -35,6 +35,9 @@ export default function MovieDetails() {
   }
 
   const { genres, overview, vote_average, title, poster_path } = movie;
+  const genresList = genres?.map(genre => genre.name).join(', ');
+  const userScore = Math.round(vote_average * 10);
+  const MovieInfo = { title, poster_path, userScore, overview, genresList };
 
   return (
     <main className="containerMain">
@@ -46,21 +49,20 @@ export default function MovieDetails() {
       >
         Go back
       </button>
-      <div className="wrapper">
-        <img
-          width="250"
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-          alt={title}
-        />
-        <div className="details">
-          <h2>{title}</h2>
-          <p>User Score: {(vote_average * 10).toFixed()} %</p>
-          <h3>Overview</h3>
-          <p>{overview}</p>
-          <h4>Genres</h4>
-          <p>{genres?.reduce((acc, genre) => acc + genre.name + ' ', '')}</p>
+      {movie && <MovieInfo movie={movie} />}
+      {movie && (
+        <div className="wrapper">
+          <img width="250" src={getPoster(poster_path)} alt={title} />
+          <div className="details">
+            <h2>{title}</h2>
+            <p>User Score: {userScore}</p>
+            <h3>Overview</h3>
+            <p>{overview}</p>
+            <h4>Genres</h4>
+            <p>{genresList}</p>
+          </div>
         </div>
-      </div>
+      )}
       <h3>Additional information</h3>
       <div className="wrapper">
         <NavLink className="navLink" to="cast">
@@ -69,9 +71,6 @@ export default function MovieDetails() {
         <NavLink className="navLink" to="reviews">
           Reviews
         </NavLink>
-
-        {/* <StyledLink to="cast">Cast</StyledLink>
-                <StyledLink to="reviews">Reviews</StyledLink> */}
       </div>
       <Suspense fallback={<div>...Loading</div>}>
         <Outlet />
